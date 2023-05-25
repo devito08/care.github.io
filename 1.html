@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AYURVEDA.AI</title>
+  <link rel="stylesheet" href="2.css">
+  <link rel="stylesheet" href="4.js" type="text/Javascript">
+  <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale =1">
+        <link href="https://fonts.googleapis.com/css? family=kaushan+Script|poppins&display=swap" rel="stylesheet">
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <?php
+include(" sample.php ");
+?>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <!-- Add your logo image here -->
+      <img src="logo.jpeg" alt="AYURVEDA.AI Logo">
+    </div>
+    <div class="care">
+      <h1>FEMACARE</h1>
+      
+        </div>
+    <div class="icon-bar">
+      <div class="dropdown">
+        <button class="dropbtn">Menu &#9662;</button>
+        <div class="dropdown-content">
+          <a href="#Blogs">Blogs</a>
+          <a href="#">Research Papers</a>
+          <a href="bg login/login.html">Login</a>
+          <a href="#">Help</a>
+          <a href="#offering">Femacare Offerings</a>
+          <a href="#footer">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    
+  </header>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div class="column">
+      <!-- Explore -->
+      <h2>Explore</h2>
+      <div class="research-papers">
+        <!-- Display research papers here -->
+        <select id="language-select" onchange="changeResearchPaperLinks()">
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="fr">French</option>
+        </select>
+        <ul id="research-papers-list">
+          <!-- Research papers go here -->
+          <li><a href="#" id="paper-1">Research Paper 1</a></li>
+          <li><a href="#" id="paper-2">Research Paper 2</a></li>
+          <li><a href="#" id="paper-3">Research Paper 3</a></li>
+          <!-- Add more research papers as needed -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function changeResearchPaperLinks() {
+      var selectedLanguage = document.getElementById("language-select").value;
+  
+      var researchPaperLinks = {
+        en: {
+          "paper-1": "e1.pdf",
+          "paper-2": "e2.pdf",
+          "paper-3": "e3.pdf",
+        },
+        hi: {
+          "paper-1": "h1.pdf",
+          "paper-2": "h2.pdf",
+          "paper-3": "h3.pdf",
+        },
+        fr: {
+          "paper-1": "f1.pdf",
+          "paper-2": "f2.pdf",
+          "paper-3": "f3.pdf",
+        },
+      };
+  
+      var researchPapers = document.querySelectorAll("#research-papers-list li a");
+  
+      for (var i = 0; i < researchPapers.length; i++) {
+        var researchPaper = researchPapers[i];
+        var researchPaperId = researchPaper.getAttribute("id");
+  
+        var pdfLink = researchPaperLinks[selectedLanguage][researchPaperId] || "#";
+        researchPaper.setAttribute("href", pdfLink);
+        researchPaper.setAttribute("target", "_blank"); // Open in a new tab or window
+      }
+    }
+  </script>
+  
+  
+  
+  <div class="Enroll">
+    <!-- Enroll -->
+    <h2>Enroll</h2>
+    <div class="enroll-form">
+      <form action="enrollment.php" method="post" enctype="multipart/form-data">
+        <label for="research-paper">Upload Research Paper:</label>
+        <input type="file" id="research-paper" name="research-paper" required><br>
+        <label for="appeal">Appeal for Publication:</label>
+        <textarea id="appeal" name="appeal" required></textarea><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+  
+
+  <!-- AI Chatbot Integration -->
+  <script id="chatbotkit-widget" src="https://static.chatbotkit.com/integrations/widget/v2.js" data-widget="clhsplsmu004xsd0hsx8faxx7"></script>
+  <!------------- -------Blogs---------------------------------->
+  <section id="Blogs">
+  <div class="Blogs"> 
+    <h2>Blogs</h2>
+      <div class="article">
+        <article>
+          <h3>Title of the blog post</h3>
+          
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum diam vel odio bibendum, vitae consequat turpis venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce volutpat risus vitae consectetur aliquam.</p>
+          
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum diam vel odio bibendum, vitae consequat turpis venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce volutpat risus vitae consectetur aliquam.</p>
+          
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum diam vel odio bibendum, vitae consequat turpis venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce volutpat risus vitae consectetur aliquam.</p>
+        </article>
+      </div>
+</div>
+  </section>
+<!-- ---------------Femcare offering -->
+<section id="offering">
+<div class="offering">
+     <h2>Femacare - Offerings</h2>
+    <h2>Our Offerings</h2>
+    
+    <h4>Product 1</h4>
+    <p>Description of Product 1.</p>
+    
+    <h4>Product 2</h4>
+    <p>Description of Product 2.</p>
+    
+    <h4>Product 3</h4>
+    <p>Description of Product 3.</p>
+    </div>
+    </section>
+  <!------------------------------------Contact us -->
+  <!--footer-->
+<section id="footer">
+  <div class="title-text">
+  <h2>CONTACT</h2>
+  
+  </div>  
+<div class="footer-row">
+<div class="footer-left">
+   <h1>Opeaning Hours</h1>
+  <p><i class="fa fa-clock-o"></i> Monday:- 9:00 Am - 9:00 Pm</p>
+  <p><i class="fa fa-clock-o"></i> Tuesday:- 9:00 Am - 9:00 Pm</p>
+  <p><i class="fa fa-clock-o"></i> Wednesday:- 9:00 Am - 9:00 Pm</p>
+  <p><i class="fa fa-clock-o"></i> Thursday:- 9:00 Am - 9:00 Pm pm</p>
+  <p><i class="fa fa-clock-o"></i> Friday:- 9:00 Am - 9:00 Pm</p>
+  <p><i class="fa fa-clock-o"></i> Saturday:- 9:00 Am - 9:00 Pm</p>
+  <p><i class="fa fa-clock-o"></i> Sunday:- Closed</p>
+</div>    
+<div class="footer-right">
+  <h1>Get in Touch</h1>
+  <p><i class="fa fa-map-marker"></i> Nanobios Lab, IIT Bombay & IKP-EDEN,Bengaluru</p>
+  <p>humans@femacare.info
+    femacaregrants@gmail.com
+    </p>
+  <p><i class= "fa fa-phone"></i> +91-7042937200 or +91-9315132791</p>
+</div>
+</div>
+</section>
+</body>
+</html>
+

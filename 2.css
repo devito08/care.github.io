@@ -1,0 +1,258 @@
+/* styles.css */
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+h2 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size:50px;
+  margin: left 0;;
+}
+
+/* Header Styles */
+header {
+  background-color: #555454;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo img {
+  height:50px;
+  width:auto;
+}
+.care {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f3f3;
+  padding: 10%;
+}
+
+.care h1 {
+  font-size: 40px;
+  text-align: center;
+  margin: 0;
+}
+
+.icon-bar {
+  margin-top: 10px;
+}
+
+.dropdown {
+  position: 50px;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position:sticky;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display:block;
+}
+
+/* Main Content Styles */
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.column {
+  flex: 0;
+  margin: right 0;;
+}
+/* Explore */
+.research-papers {
+  margin-top: 20px;
+}
+
+#language-select {
+  margin-bottom: 10px;
+}
+
+#research-papers-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#research-papers-list li {
+  margin-bottom: 5px;
+}
+
+#research-papers-list a {
+  text-decoration:none;
+}
+
+#research-papers-list a:hover {
+  text-decoration: underline;
+
+}
+
+/* Enroll */
+.Enroll{
+  flex: 2;
+  margin-left:20px;
+  background-color: rgb(236, 236, 236);
+}
+ /*.research-papers {
+   Add styles for research papers here }*/
+
+
+.enroll-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.enroll-form input[type="file"],
+.enroll-form input[type="text"],
+.enroll-form input[type="email"],
+.enroll-form textarea {
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.enroll-form input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Chatbot Integration Styles */
+#chatbotkit-widget {
+  margin-top: 20px;
+}
+/*Blog*/
+
+.Blogs {
+  background-color: #f5a0a0;
+  padding: 20px;
+  text-align: center;
+}
+
+ .article{
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+p{
+  line-height: 1.5;
+}
+/* Offering */
+  
+.offering{
+  background-color: #cccbcb;
+  padding: 20px;
+  text-align: center;
+}
+
+h4 {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+/* contact */
+.contact {
+  max-width:880px ;
+  margin: 20px auto;
+  padding: 50px;
+  background-color: #db7f7f;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.contact1{
+  margin-top: 10%;
+}
+
+#contact h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#contact ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#contact li {
+  margin-bottom: 10px;
+}
+
+#contact a {
+  color: #4e8cff;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration:#cccbcb;
+}
+#footer{
+  padding: 100px 0 20px;
+  background: #efefef;
+}
+.footer-row{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-left,.footer-right{
+  flex-basis: 45%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.footer-right{
+  text-align: right;
+}
+.footer-row h1{
+  margin: 10px 0;
+}
+.footer-row p{
+  line-height: 35px;
+}
+.footer-left .fa ,.footer-right .fa{
+  font-size: 20px;
+  color: #009688;
+  margin: 10px;
+}

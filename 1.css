@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AYURVEDA.AI</title>
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin-right: 10px;
+    }
+
+    .content {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .column {
+      flex: 1;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Language Selection */
+    .language-select {
+      margin-bottom: 10px;
+    }
+
+    /* Research Papers */
+    .research-paper {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="path_to_logo_image" alt="AYURVEDA.AI Logo">
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Research Papers</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Femacare Offerings</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div class="column">
+      <!-- Explore -->
+      <h2>Explore</h2>
+      <div class="language-select">
+        <label for="language">Language:</label>
+        <select id="language">
+          <option value="english">English</option>
+          <option value="hindi">Hindi</option>
+          <option value="french">French</option>
+        </select>
+      </div>
+      <div id="research-papers">
+        <!-- Research papers will be dynamically inserted here -->
+      </div>
+    </div>
+    <div class="column">
+      <!-- Enroll -->
+      <h2>Enroll</h2>
+      <form action="enrollment.php" method="post" enctype="multipart/form-data">
+        <label for="research-paper">Upload Research Paper:</label>
+        <input type="file" id="research-paper" name="research-paper" required><br>
+        <label for="appeal">Appeal for Publication:</label>
+        <textarea id="appeal" name="appeal" required></textarea><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="icon-bar">
+      <!-- Icon bar with dropdown menu -->
+      <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="#">Blogs</a>
+          <a href="#">Research Papers</a>
+          <a href="#">Login</a>
+          <a href="#">Help</a>
+          <a href="#">Femacare Offerings</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Chatbot Integration -->
+  <script id="chatbotkit-widget" src="https://static.chatbotkit.com/integrations/widget/v2.js" data-widget="clhsplsmu004xsd0hsx8faxx7"></script>
+
+  <script>
+    // Research Papers
+     (English)", file: "research_paper_2_english.pdf" },
+        // Add more research papers as neededconst researchPapers = {
+      english: [
+        { title: "Research Paper 1 (English)", file: "research_paper_1_english.pdf" },
+        { title: "Research Paper 2
+      ],
+      hindi: [
+        { title: "Research Paper 1 (Hindi)", file: "research_paper_1_hindi.pdf" },
+        { title: "Research Paper 2 (Hindi)", file: "research_paper_2_hindi.pdf" },
+        // Add more research papers as needed
+      ],
+      french: [
+        { title: "Research Paper 1 (French)", file: "research_paper_1_french.pdf" },
+        { title: "Research Paper 2 (French)", file: "research_paper_2_french.pdf" },
+        // Add more research papers as needed
+      ],
+    };
+
+    const languageSelect = document.getElementById("language");
+    const researchPapersContainer = document.getElementById("research-papers");
+
+    languageSelect.addEventListener("change", function () {
+      const selectedLanguage = languageSelect.value;
+      const papers = researchPapers[selectedLanguage];
+      
+      // Reset visibility of all research papers
+      const allPapers = document.querySelectorAll(".research-paper");
+      allPapers.forEach(paper => paper.classList.remove("active"));
+
+      // Display research papers for the selected language
+      papers.forEach((paper, index) => {
+        const paperDiv = document.getElementById(`research-paper-${index}`);
+        paperDiv.classList.add("active");
+      });
+    });
+
+    // Add research papers dynamically
+    Object.keys(researchPapers).forEach((language) => {
+      const papers = researchPapers[language];
+      papers.forEach((paper, index) => {
+        const paperDiv = document.createElement("div");
+        paperDiv.setAttribute("id", `research-paper-${index}`);
+        paperDiv.classList.add("research-paper");
+        if (index === 0) {
+          paperDiv.classList.add("active");
+        }
+        const paperLink = document.createElement("a");
+        paperLink.setAttribute("href", `path_to_research_papers/${paper.file}`);
+        paperLink.textContent = paper.title;
+        paperDiv.appendChild(paperLink);
+        researchPapersContainer.appendChild(paperDiv);
+      });
+    });
+  </script>
+</body>
+</html>
